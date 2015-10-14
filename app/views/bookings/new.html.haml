@@ -1,0 +1,160 @@
+#main
+  #step-booking.content-box
+    %ul.step-booking
+      %li#firststep.first.step-success
+        %i.icon-step.sprite
+          %em 1
+        %span.visible-desktop Choose Your Room
+      %li#secondstep.step-active
+        %i.icon-arrow.sprite
+        %i.icon-step.sprite
+          %em 2
+        %span.visible-desktop Your Booking Details
+      %li.step-disable
+        %i.icon-arrow.sprite
+        %i.icon-step.sprite
+          %em 3
+        %span.visible-desktop Booking Completed!
+  - if @room_type.present? and @booking.checkin_date.present? and @booking.checkout_date.present?
+    %table{:cellpadding => "0", :cellspacing => "0", :width => "100%"}
+      %tbody
+        %tr
+          %td#box_left
+            #divHeadTitle.blacktext Your Booking Details
+            #divstep1
+              = form_for @booking do |f|
+                = f.hidden_field :checkin_date
+                = f.hidden_field :checkout_date
+                = f.hidden_field :room_type_id
+                = f.hidden_field :night_count
+                = f.hidden_field :adult_count
+                = f.hidden_field :room_count
+                #divCutName.bggreybox
+                  #rowContact.bkg_divInputRow.overflow-visible
+                    .clear
+                      - if @booking.errors[:base].present?
+                        #errSum
+                          %ul
+                            - @booking.errors[:base].each do |msg|
+                              %li
+                                = msg
+                    .clear
+                      #divCntFirstName.bkg_divInputCol.width-half.group-firstname
+                        %span.bkg_lblInput.blackbold
+                          First Name
+                          %i.star *
+                        .relative
+                          = f.text_field :first_name
+                      #divCntLastName.bkg_divInputCol.width-half.group-lastname
+                        %span.bkg_lblInput.blackbold
+                          Last Name
+                          %i.star *
+                        .relative
+                          = f.text_field :last_name
+                    .clear
+                      .bkg_divInputCol.width-half
+                        %span.bkg_lblInput.blackbold
+                          Email
+                          %i.star *
+                        .relative
+                          = f.text_field :email
+                      .bkg_divInputCol.width-half
+                        %span.bkg_lblInput.blackbold
+                          Phone Number
+                          %i.star *
+                        .relative
+                          = f.text_field :phone_no
+                  #pnlAddress
+                    / Address
+                    .clear
+                      .bkg_divInputCol.width-half
+                        %span.bkg_lblInput.blackbold
+                          Address Line 1
+                          %i.star *
+                        .relative
+                          = f.text_field :address_line1
+                      .bkg_divInputCol.width-half
+                        %span.bkg_lblInput.blackbold
+                          Address Line 2
+                          %i.star *
+                        .relative
+                          = f.text_field :address_line2
+                    .clear
+                      .bkg_divInputCol.width-half
+                        %span.bkg_lblInput.blackbold
+                          City
+                          %i.star *
+                        .relative
+                          = f.text_field :city
+                      .bkg_divInputCol.width-half
+                        %span.bkg_lblInput.blackbold
+                          State
+                          %i.star *
+                        .relative
+                          = f.text_field :state
+                    .clear
+                      .bkg_divInputCol.width-half
+                        %span.bkg_lblInput.blackbold
+                          Country
+                          %i.star *
+                        .relative
+                          = f.text_field :country
+                  .clear
+                  #divBtnWrapperStep1.blue_roundbtn_wrapper
+                    = f.submit "Submit", :class => "blue_roundbtn", :id => "btnContinue"
+          %td#box_right
+            / Booking Details
+            #divRoomInfo.bggreybox
+              %p.blacklarge Room Information
+              %table.blacktext{:style => "margin-top: 8px;"}
+                %tbody#tblRoomDes
+                  %tr
+                    %td{:style => "width:96px"}
+                      = image_tag(@room_type.name.parameterize+".jpg", :id => "roomdetails-img", :class => "handcursor", :height => "74",:width => "96" )
+                    %td.roomdetails-txt
+                      %ul
+                        - @room_type.facilities.each do |facility|
+                          %li
+                            = facility.name
+            #bkg_divBooking{:style => ""}
+              #bkg_divBookingDetails.bookingdetails
+                #pnlRoomInfo.bkgdt_marginb.bg_booking{:style => "padding-bottom: 8px; margin-top: 0"}
+                  .relative.clearfix
+                  %table#tblRoomDetail.bkgdt_width
+                    %tbody#roomDetail
+                      %tr.bksum-roomname
+                        %td.bkgdt_col1
+                          %span.blackbold 
+                            Check In
+                          %span.pernight 
+                            = @booking.checkin_date.strftime("%d %b %Y")
+                      %tr.bksum-roomname
+                        %td.bkgdt_col1
+                          %span.blackbold 
+                            Check Out
+                          %span.pernight 
+                            = @booking.checkout_date.strftime("%d %b %Y")
+                      %tr.bksum-roomname
+                        %td.bkgdt_col1
+                          %span.blackbold 
+                            = pluralize(@booking.room_count, 'Room')
+                          %span.pernight 
+                            x 
+                            = pluralize(@booking.night_count, 'Night')
+                  %p.clear
+                #pnlTotalPrice.bkgdt_marginb.bg_booking.final
+                  %table.bkgdt_width
+                    %tbody#footerDetail
+                      %tr
+                        %td.bkgdt_col1
+                          %span.blackbold Total Price
+                        %td.bkgdt_col2
+                          %span.blackbold Rs
+                        %td.bkgdt_col3{:style => "width: 47.5px;"}
+                          %span.blackbold 
+                            = @booking.payment_amount
+                  %p.clear
+              %p.clear
+  - else
+    #divHeadTitle.blacktext 
+      Wrong Booking Details

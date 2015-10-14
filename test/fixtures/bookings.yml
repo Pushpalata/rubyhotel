@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  room_type_id: 1
+  checkin_date: 2015-10-08
+  checkout_date: 2015-10-08
+  adult_count: 1
+  child_count: 1
+  name_title: MyString
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone_no: MyString
+  address_line1: MyString
+  address_line2: MyString
+  city: MyString
+  country: MyString
+  state: MyString
+  zipcode: MyString
+  status: MyString
+  payment_amount: 1.5
+
+two:
+  uid: MyString
+  room_type_id: 1
+  checkin_date: 2015-10-08
+  checkout_date: 2015-10-08
+  adult_count: 1
+  child_count: 1
+  name_title: MyString
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone_no: MyString
+  address_line1: MyString
+  address_line2: MyString
+  city: MyString
+  country: MyString
+  state: MyString
+  zipcode: MyString
+  status: MyString
+  payment_amount: 1.5

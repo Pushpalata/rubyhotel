@@ -1,0 +1,114 @@
+#main
+  #step-booking.content-box
+    %ul.step-booking
+      %li#firststep.first.step-success
+        %i.icon-step.sprite
+          %em 1
+        %span Choose Your Room
+      %li#secondstep.step-success
+        %i.icon-step.sprite
+          %em 2
+        %span Your Booking Details
+      %li.step-active
+        %i.icon-arrow.sprite
+        %i.icon-step.sprite
+          %em 3
+        %span Booking Completed!
+  - if @booking.present?
+    %table{:cellpadding => "0", :cellspacing => "0", :width => "100%"}
+      %tbody
+        %tr
+          %td#box_left
+            #divHeadTitle.blacktext Your Booking Details
+            #divstep1
+              #divCutName.bggreybox
+                #rowContact.bkg_divInputRow.overflow-visible
+                  .clear
+                    #divCntFirstName.bkg_divInputCol.width-half.group-firstname
+                      %span.bkg_lblInput.blackbold
+                        First Name
+                      .relative
+                        = @booking.first_name
+                    #divCntLastName.bkg_divInputCol.width-half.group-lastname
+                      %span.bkg_lblInput.blackbold
+                        Last Name
+                      .relative
+                        = @booking.last_name
+                  .clear
+                    .bkg_divInputCol.width-half
+                      %span.bkg_lblInput.blackbold
+                        Email
+                      .relative
+                        = @booking.email
+                    .bkg_divInputCol.width-half
+                      %span.bkg_lblInput.blackbold
+                        Phone Number
+                      .relative
+                        = @booking.phone_no
+                #pnlAddress
+                  / Address
+                  .clear
+                    .bkg_divInputCol.width-half
+                      %span.bkg_lblInput.blackbold
+                        Address
+                      .relative
+                        = @booking.full_address
+                .clear
+          %td#box_right
+            / Booking Details
+            #divRoomInfo.bggreybox
+              %p.blacklarge Room Information
+              %table.blacktext{:style => "margin-top: 8px;"}
+                %tbody#tblRoomDes
+                  %tr
+                    %td{:style => "width:96px"}
+                      = image_tag(@room_type.name.parameterize+".jpg", :id => "roomdetails-img", :class => "handcursor", :height => "74",:width => "96" )
+                    %td.roomdetails-txt
+                      %ul
+                        - @room_type.facilities.each do |facility|
+                          %li
+                            = facility.name
+            #bkg_divBooking{:style => ""}
+              #bkg_divBookingDetails.bookingdetails
+                #pnlRoomInfo.bkgdt_marginb.bg_booking{:style => "padding-bottom: 8px; margin-top: 0"}
+                  .relative.clearfix
+                  %table#tblRoomDetail.bkgdt_width
+                    %tbody#roomDetail
+                      %tr.bksum-roomname
+                        %td.bkgdt_col1
+                          %span.blackbold 
+                            Check In
+                          %span.pernight 
+                            = @booking.checkin_date.strftime("%d %b %Y")
+                      %tr.bksum-roomname
+                        %td.bkgdt_col1
+                          %span.blackbold 
+                            Check Out
+                          %span.pernight 
+                            = @booking.checkout_date.strftime("%d %b %Y")
+                      %tr.bksum-roomname
+                        %td.bkgdt_col1
+                          %span.blackbold 
+                            = pluralize(@booking.room_count, 'Room')
+                          %span.pernight 
+                            x 
+                            = pluralize(@booking.night_count, 'Night')
+                  %p.clear
+                #pnlTotalPrice.bkgdt_marginb.bg_booking.final
+                  %table.bkgdt_width
+                    %tbody#footerDetail
+                      %tr
+                        %td.bkgdt_col1
+                          %span.blackbold Total Price
+                        %td.bkgdt_col2
+                          %span.blackbold Rs
+                        %td.bkgdt_col3{:style => "width: 47.5px;"}
+                          %span.blackbold 
+                            = @booking.payment_amount
+                  %p.clear
+              %p.clear
+  - else
+    #divHeadTitle.blacktext 
+      Wrong Booking Details
+  %center
+    = link_to "Home", "/"

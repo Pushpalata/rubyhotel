@@ -1,0 +1,40 @@
+.body.booking-search
+  .box.box-3
+    %aside.sidebar
+      / panel wrapper starts
+      #search-wrapper.panel-wrapper
+        #search-panel-wrapper.search-panel-wrapper
+          #search-panel.search-panel
+            #search-title.search-panel-title
+              %h3 Your Search Details
+            / search form starts
+            = render :partial => "bookings/booking_search"
+  .box.box-9
+    %ul.room-list
+      - if @room_types.present?
+        - @room_types.each do |room_type|
+          - room_left = @room_info[room_type.id]
+          %li.item
+            .img-container
+              = image_tag(room_type.name.parameterize + ".jpg")
+            .info-container
+              %h3
+                = room_type.name
+              .details
+                %span
+                  Features
+                %ul
+                  - room_type.facilities.each do |facility|
+                    %li
+                      = facility.name
+              %span.room-left
+                = pluralize(room_left, 'Room')
+                Left
+            .book-section
+              - unless room_left == 0
+                = link_to "Book", new_booking_path(:type => room_type.id), :class => "book-btn"     
+      - else
+        %li
+          No Rooms Present
+      
+.clear            

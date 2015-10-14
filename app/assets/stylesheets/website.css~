@@ -1,0 +1,356 @@
+body {
+    font-family: helvetica,arial,sans-serif;
+    font-weight: 300;
+    white-space: normal;
+    line-height: 1.62;
+    font-size: 13px;
+    color: #333;
+}
+.wrapper {
+    width: 100%;
+    min-width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+.wrapper, body, html {
+    height: auto!important;
+    min-height: 100%;
+}
+.head {
+    width: auto;
+    min-width: 980px;
+    height: 60px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1060;
+    color: #666;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,.3);
+}
+.inline {
+    height: inherit;
+    margin: 0 auto;
+    position: relative;
+}
+.grid, .inline {
+    width: 940px;
+    padding: 0 20px;
+}
+.clpv3.rtl .logo, .clpv3.rtl .logo-partner, .lbh-logo-common, .logo, .logo-partner, .rtl .logo, .rtl .logo-partner, .tablet-wrapper .head .logo {
+    display: inline-block;
+    margin-top: 12px;
+    position: relative;
+    left: auto;
+    top: auto;
+    vertical-align: top;
+}
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 12px;
+}
+.foot {
+    z-index: 2;
+}
+.body, .foot {
+    width: auto;
+    min-width: 980px;
+    margin: 0 auto;
+    /*position: relative;*/
+}
+.foot-bottom {
+    padding: 10px 0 6px;
+    background: #e5e5e5;
+}
+.box.align-left, .box:first-child {
+    margin-left: 0;
+}
+
+.box {
+    margin-left: 20px;
+    float: left;
+    min-height: 1px;
+    display: block;
+}
+.box-3 {
+    width: 24%;
+}
+.box-9 {
+    width: 74%;
+}
+.bg-home-panel {
+    /*position: relative;
+    z-index: -1;*/
+    background:url(/assets/The-Hotel.jpg) center center no-repeat;
+    background-size: 100% 100%;
+    min-height:600px;
+}
+.rotator-wrapper {
+    width: 900px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 48px;
+}
+.rotator-text {
+    left: 50%;
+    width: 900px;
+    /*margin-left: -450px;
+    position: absolute;
+    top: 0;
+    z-index: 1;*/
+}
+
+.rotate-it {
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+.rotate-it {
+    font-size: 38px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.rotator-sub-title {
+    position: relative;
+    width: 900px;
+    font-size: 20px;
+    color: #fff;
+}
+.rotate-it, .rotator-sub-title {
+    text-align: center;
+    font-family: Arial,Helvetica,sans-serif;
+    text-shadow: 0 5px 10px #b3b3b3;
+}
+.rotate-it {
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+.rotate-it {
+    font-size: 38px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.search-panel-wrapper {
+    width: 646px;
+    padding: 20px;
+    margin: 15px auto 0;
+    background: rgba(0,0,0,.2);
+    border-radius: 10px;
+}
+.search-panel {
+    width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+    border: 0;
+}
+.search-panel {
+    background-color: #fff;
+    border-radius: 10px;
+    /*margin-bottom: 24px;*/
+}
+.search-form {
+    padding: 0 12px;
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+fieldset {
+    padding-bottom: 0;
+}
+.search-panel fieldset .block {
+    clear: none;
+}
+.search-form .check-in-out-section, .search-form .occupancy-section {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+.search-form .form-actions {
+    margin: 0;
+    padding: 8px 0 0;
+    background: 0 0;
+    border: none;
+}
+.search-form .form-actions .submit {
+    margin: 0;
+    height: 52px;
+    font-size: 26px;
+}
+.search-form .form-actions .submit {
+    width: 100%;
+}
+.submit {
+    height: 48px;
+    padding: 6px 22px 8px;
+    background: #2a8dd5;
+    background-image: -moz-linear-gradient(top,#77c5fd,#016ec0);
+    background-image: -webkit-linear-gradient(top,#77c5fd,#016ec0);
+    background-image: -o-linear-gradient(top,#77c5fd,#016ec0);
+    background-image: -ms-linear-gradient(top,#77c5fd,#016ec0);
+    background-image: linear-gradient(top,#77c5fd,#016ec0);
+    border: 2px solid #109fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.1);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+    font-weight: 700;
+    line-height: 22px;
+    line-height: 2.2rem;
+    font-size: 20px;
+    font-size: 2rem;
+    color: #fff;
+}
+.search-form .occupancy-section .guest-box {
+    width: 37%;
+    float: left;
+    margin-right: 7%;
+}
+.search-panel .block {
+    clear: none;
+}
+.search-panel label{
+display:block;
+}
+.search-form .occupancy-section .room-box {
+    margin: 0 1%;
+}
+.search-form .occupancy-section .room-box {
+    width: 25%;
+    float: left;
+}
+.search-form .occupancy-section .room-box select{
+width:90%;
+}
+.search-form label.label-search {
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+.input, input, select, textarea {
+    height: auto;
+    padding: 8px 6px 7px;
+    margin: .1em 0;
+    font-size: 15px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: inline-block;
+    border: 1px solid #dedede;
+    border-left-color: #c1c2c1;
+    border-top-color: #c1c2c1;
+    background-color: #fafafa;
+    box-shadow: 0 1px 0 rgba(255,255,255,.8),inset 0 0 1px rgba(0,0,0,.2);
+    border-radius: 4px;
+    overflow: visible;
+    -webkit-transition: border linear .8s,box-shadow linear .8s;
+    -moz-transition: border linear .8s,box-shadow linear .8s;
+    transition: border linear .8s,box-shadow linear .8s;
+}
+.banner-overlay-desktop {
+    z-index: -1;
+    background: #000;
+    height: 560px;
+    filter: alpha(opacity=20);
+    -moz-opacity: .2;
+    opacity: .2;
+    zoom: 1;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.bg-home-panel>.media {
+    height: 560px;
+    width: 100%;
+    z-index: -1;
+}
+.media {
+    position: relative;
+}
+.bg-home-panel>.media-cover img {
+    width: 100%;
+    min-height: 560px;
+    height: auto;
+}
+.media-cover img {
+    background: 0 0;
+    opacity: 0;
+}
+.search-form .check-in-out-section .check-in {
+    width: 45%;
+}
+.search-form .check-in-out-section .section {
+    float: left;
+    height: auto;
+}
+.search-form .check-in-out-section .check-in .select.check-in-day-dropdown {
+    width: 36%;
+}
+.search-form .check-in-out-section .check-in .select {
+    margin-right: 1%;
+}
+.search-panel fieldset .block {
+    clear: none;
+}
+.search-form .check-in-out-section .check-in .select.check-in-month-year-dropdown {
+    width: 48%;
+}
+.search-form .check-in-out-section .check-in .select {
+    margin-right: 1%;
+}
+footer.foot .container {width:100%;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+#search-wrapper, .ssr-page .box.box-3, .ssr-page .search-form dl.check-in {
+    position: relative;
+}
+.body.booking-search{
+  width:80%;
+  margin: 0 auto;
+}
+.booking-search .search-panel {
+    border-color: #D1D1D1;
+}
+
+.booking-search .search-panel {
+    background-color: #fff;
+    border: 3px solid #0283df;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+.booking-search .search-panel h3 {
+    background-color: #f4f4f4;
+    border-radius: 9px 9px 0 0;
+    font-size: 16px;
+    font-weight: 700;
+    zoom: 1;
+    margin: 0;
+    padding: 9px 12px 8px;
+    border-bottom: 1px solid #d6d6d6;
+}
+@media screen and (min-width: 1175px)
+.extra-wide .box-12, .extra-wide .foot .top-destinations-box, .extra-wide .grid, .extra-wide .inline {
+    width: 1100px;
+}
+.booking-search .search-panel-wrapper{width: 250px;padding:0;}
+.booking-search .search-panel{width:100%;border-color: #D1D1D1;padding:0;}
+.booking-search .search-form .occupancy-section .room-box {
+    width: 100%;
+    float: left;
+}
+.booking-search .search-form .submit {
+    font-size: 18px;
+    height: 35px;
+    margin: 10px 0 20px 0;
+}
+ul.room-list{padding:0;margin:0;margin-top:20px;}
+ul.room-list li{width:100%;display:block;padding:10px 5px;border-bottom: 1px solid #d6d6d6;}
+ul.room-list li .img-container{width:30%;display:block;float:left;}
+ul.room-list li .img-container img{max-width:100%;}
+ul.room-list li .info-container{margin-left: 15px;width:67%;float:left;}
+ul.room-list li .info-container h3 {
+    margin: 0;
+    line-height: 1.3;
+    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333;
+}

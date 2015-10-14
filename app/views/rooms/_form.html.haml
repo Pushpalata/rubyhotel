@@ -1,0 +1,28 @@
+= form_for @room, html: { class: "form form-horizontal room" } do |f|
+  .form-group
+    = f.label :room_type, class: 'control-label'
+    .controls
+      = f.select :room_type_id, RoomType.all.collect{|r| [r.name, r.id]}, class: 'form-control', required: true
+    = error_span(@room[:room_no])
+  .form-group
+    = f.label :room_no, class: 'control-label'
+    .controls
+      = f.text_field :room_no, class: 'form-control', required: true
+    = error_span(@room[:room_no])
+  .form-group
+    = f.label :wing, class: 'control-label'
+    .controls
+      = f.select :wing, ("A".."D").to_a, class: 'form-control', required: true, :prompt => true
+    = error_span(@room[:wing])
+  .form-group
+    = f.label :rate, class: 'control-label'
+    .controls
+      = f.text_field :rate, class: 'form-control', required: true
+    = error_span(@room[:rate])
+  .form-group
+    = f.label :floor_no, class: 'control-label'
+    .controls
+      = f.select :floor_no, (1..4).to_a, class: 'form-control', required: true, :prompt => true
+    = error_span(@room[:floor_no])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), rooms_path, :class => 'btn btn-default'

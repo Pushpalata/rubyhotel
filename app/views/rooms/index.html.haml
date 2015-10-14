@@ -1,0 +1,29 @@
+- model_class = Room
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:room_no)
+      %th= model_class.human_attribute_name(:wing)
+      %th= model_class.human_attribute_name(:rate)
+      %th= model_class.human_attribute_name(:floor_no)
+      %th= model_class.human_attribute_name(:status)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @rooms.each do |room|
+      %tr
+        %td= link_to room.id, room_path(room)
+        %td= room.room_no
+        %td= room.wing
+        %td= room.rate
+        %td= room.floor_no
+        %td= room.status
+        %td=l room.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_room_path(room), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), room_path(room), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_room_path, :class => 'btn btn-primary'

@@ -1,0 +1,35 @@
+.body.body-home
+  .bg-home-panel
+    /.banner-overlay-desktop
+    .rotator-wrapper.rotator-text
+      %h1.rotate-it 
+        Welcome to Ruby Hotel
+      %h2.rotator-sub-title 750,000+ hotels, villas, apartments and more...
+      #search-panel-wrapper.search-panel-wrapper
+        #search-panel.search-panel{"data-selenium" => "search-panel"}
+          / search form starts
+          = render :partial => "bookings/booking_search"
+          .search-form.calendar-form
+            = form_tag bookings_path, :method => :get do |f|
+              #check-in-out-section.check-in-out-section
+                #check-in-section.block.section.check-in
+                  %label#check-in-label.bold.search-form-label Check-in:
+                  = text_field_tag :check_in_date
+                #check-out-section.block.section.check-out
+                  %label#check-out-label.bold.search-form-label Check-out:
+                  = text_field_tag :check_out_date
+              .clear
+              #occupancy-section.occupancy-section
+                #room-option-section.block.room-box.room-option
+                  %label#room-option-label.bold Rooms:
+                  = select_tag :room, options_for_select((1..9).to_a)
+                #adult-option-section.block.room-box.adult-option
+                  %label#adult-option-label.bold Adults:
+                  = select_tag :adults, options_for_select((1..20).to_a)
+                #children-option-section.block.room-box.children-option
+                  %label#children-option-label.bold Children (age 2-11):
+                  = select_tag :children, options_for_select((0..4).to_a)
+              .clear
+              #form-action-section.form-actions
+                = submit_tag "Search", :class => "submit submit-primary", :id => "search-submit"
+              

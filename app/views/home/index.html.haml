@@ -1,0 +1,12 @@
+.body.body-home
+  .bg-home-panel
+    /.banner-overlay-desktop
+    .rotator-wrapper.rotator-text
+      %h1.rotate-it 
+        Welcome to Ruby Hotel
+      %h2.rotator-sub-title 750,000+ hotels, villas, apartments and more...
+      #search-panel-wrapper.search-panel-wrapper
+        #search-panel.search-panel{"data-selenium" => "search-panel"}
+          / search form starts
+          = render :partial => "bookings/booking_search"
+              
